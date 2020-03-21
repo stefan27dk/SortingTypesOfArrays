@@ -25,11 +25,13 @@ namespace Straight_Selection_and_Insertion_Sort
             /* array = */
 
             int[] array2 = new int[10] { 3, 8, 9, 3, 56, 38, 32, 76, 28, 21 };
+            int[] array3 = new int[8] { 1, 8, 6, 7, 2, 5, 9, 0 };
 
             //SelectionSort(array2);
             //InsertionSort(array2);
             //BubbleSort(array2);
-            RecrusiveQuickSort(array2);
+            //RecrusiveQuickSort(array3);
+            MergeSort(array2);
             Console.ReadLine();
 
 
@@ -37,6 +39,32 @@ namespace Straight_Selection_and_Insertion_Sort
         }
 
         //-----------Main--:::END::--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        //-----------Merege Sort--:::START::--------------------------------------------------------------------------------------------------------------------------------
+
+        private static void MergeSort(int[] array)
+        {
+
+
+        }
+
+
+        //-----------Merege Sort--:::END::--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,6 +98,7 @@ namespace Straight_Selection_and_Insertion_Sort
                 {
                     pointLeft++;
                 }
+
 
                 while (array[pointRight] > pivot)//-----While Right Point is bigger than "pivot" move 1 step to left "Jump Over". 
                 {
