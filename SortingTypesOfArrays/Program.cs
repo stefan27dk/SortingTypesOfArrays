@@ -32,7 +32,8 @@ namespace Straight_Selection_and_Insertion_Sort
             //BubbleSort(array2);
             //RecrusiveQuickSort(array3);
             //MergeSort(array2);
-            ShellSort(array2);
+            //ShellSort(array2);
+            HeapSort(array2);
             Console.ReadLine();
 
 
