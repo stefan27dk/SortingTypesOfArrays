@@ -29,9 +29,10 @@ namespace Straight_Selection_and_Insertion_Sort
 
             //SelectionSort(array2);
             //InsertionSort(array2);
-            BubbleSort(array2);
+            //BubbleSort(array2);
             //RecrusiveQuickSort(array3);
             //MergeSort(array2);
+            ShellSort(array2);
             Console.ReadLine();
 
 
@@ -275,7 +276,33 @@ namespace Straight_Selection_and_Insertion_Sort
 
         //--Shell Sort----::Start::------------------------------------------------------------------------------------------------------------------------------------------------------
 
+         static private void ShellSort(int[] arr)
+        {
+            int n = arr.Length;// The Lenght fo the array
+           
+            for (int gap = n / 2; gap > 0; gap /= 2)// The Lenght of the array dividet with 2 is bigger than the half of it self
+            {                                      //Array.Lenght is bigger than  Array.Lenght / 2
+               
+                for (int i = gap; i < n; i += 1)// "i" = gap----> "i" is smaller than array.Lenght --"n" ---------> Every loop + 1. This will continue till it gets to the end of the array 
+                {
+                   
+                    int temp = arr[i]; // Temp
+                 
+                    int j;
+                    for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+                        arr[j] = arr[j - gap];
 
+
+                    arr[j] = temp;
+                }
+            }
+
+            for (int h = 0; h < arr.Length; h++)
+            {
+                Console.WriteLine(arr[h]);
+            }
+
+        }
 
 
         //--Shell Sort----::End::------------------------------------------------------------------------------------------------------------------------------------------------------
