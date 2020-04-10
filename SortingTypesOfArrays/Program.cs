@@ -29,16 +29,17 @@ namespace Straight_Selection_and_Insertion_Sort
 
             //SelectionSort(array2);
             //InsertionSort(array2);
-            //BubbleSort(array2);
+            BubbleSort(array2);
             //RecrusiveQuickSort(array3);
-            MergeSort(array2);
+            //MergeSort(array2);
             Console.ReadLine();
 
 
 
         }
 
-        //-----------Main--:::END::--------------------------------------------------------------------------------------------------------------------------------
+        //-----------Main--:::END::---------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -53,13 +54,6 @@ namespace Straight_Selection_and_Insertion_Sort
 
 
         //-----------Merege Sort--:::END::--------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
 
 
 
@@ -145,23 +139,39 @@ namespace Straight_Selection_and_Insertion_Sort
 
         static private void BubbleSort(int[] array)
         {
+
+            bool swapped; //------Part of the BREAK 1
             for (int i = 0; i < array.Length - 1; i++)//----Loop Array
             {
-
-                for (int a = 0; a < array.Length - 1; a++)//----While looping array loop all and swap so the samller vlue is before the big
+                swapped = false;//------Part of the BREAK  2
+                for (int a = 0; a < array.Length - 1; a++)//----While looping array loop all and swap so the samller value is before the big
                 {
-                    int current = a;
-                    int next = a + 1;
-                    if (array[current] > array[next])//---If current value is bigger than next value swap it, it will swap all values till it gets to the end and than we have the next iteration of the array loop " first for loop" . It will check for swapping till it gets the end of the array
+                    int current = a; //------Current value " The place of value we are looking at"
+                    int next = a + 1; //----The place of the next value
+
+
+                    if (array[current] > array[next])//---If current value is bigger than next value swap it
+
+                        //it will swap all values till it gets to the end and than we have the next iteration of the array loop 
+                        //" first for loop" . It will check for swapping till it gets the end of the array
                     {
                         (array[current], array[next]) = (array[next], array[current]);//---Swap
+                        swapped = true; //Part of the BREAK 3
                     }
 
                 }
 
+                if (swapped == false) //BREAK      //In The for loop we are changing the places of the values if the next value is smaller than the current "Than swap it" this will continue till the end and than we begin from the beggining with the swapping till we have passed the whole lenght of the array. So neverminds what we we continue looking for the values even if there are no values for swapping because the algorithm says forloop the whole lengh and swap. But here we have bool that is checking if there was anything that was swapped. If nothing was swapped and we continue looking wi will just loose time. So here we have the breaker wich will break out because there are no more values to be swapped. 
+                    // The first for loop is looping and the end is the length of the array. The second for loop is also looping and its end is the lenght of the array. Its for loop in For Loop. So if the first for loop is 1 the next wil loop the whole array and swapp if needed, than for loop 1 = 2 the second value now the second for loop will loop again the whole array and swapp if needed. Soif the second array dont swaps any values that means that all are in order. So the break will break out so the first for loop dont continues looping to the end of the array because the values are in order so we dont have to wait for it to loop and check.
+                {
+                    break;
+                }
+
+
             }
 
-            for (int h = 0; h < array.Length - 1; h++)
+
+            for (int h = 0; h <= array.Length - 1; h++)
             {
                 Console.WriteLine(array[h]);
 
@@ -245,6 +255,36 @@ namespace Straight_Selection_and_Insertion_Sort
         }
 
         //--Selection Sort----::End::------------------------------------------------------------------------------------------------------------------------------------------------------
+
+     
+
+
+        //--Count Sort----::Start::------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                static private void CountSort()
+                {
+
+                }
+
+
+        //--Count Sort----::END::------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        //--Shell Sort----::Start::------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        //--Shell Sort----::End::------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 
     }
 }
