@@ -48,7 +48,7 @@ namespace Straight_Selection_and_Insertion_Sort
    
     static void HeapSort(int[] array)
     {
-        var length = array.Length;
+        int length = array.Length;
         for (int i = length / 2 - 1; i >= 0; i--)
         {
             Heapify(array, length, i);
@@ -60,7 +60,12 @@ namespace Straight_Selection_and_Insertion_Sort
             array[i] = temp;
             Heapify(array, i, 0);
         }
-    }
+
+            for (int h = 0; h < array.Length; h++) //----PRINT
+            {
+                Console.WriteLine(array[h]);
+            }
+        }
 
     //Rebuilds the heap
     static void Heapify(int[] array, int length, int i)
@@ -83,6 +88,9 @@ namespace Straight_Selection_and_Insertion_Sort
             array[largest] = swap;
             Heapify(array, length, largest);
         }
+
+
+
     }
 
        //-------HEAP---::END::------------------------------------------------------------------------------------------------------------------------------------------
